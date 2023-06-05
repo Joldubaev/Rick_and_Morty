@@ -21,7 +21,8 @@ class HomePage extends StatelessWidget {
         ),
       ),
       body: BlocProvider(
-        create: (context) => CharacterBloc(characterRepo: repository),
+        create: (context) => CharacterBloc(characterRepo: repository)
+          ..add(const CharacterEventFetch(name: '', page: 1)),
         child: Container(
             decoration: const BoxDecoration(color: Colors.black87),
             child: const SearchPage()),
